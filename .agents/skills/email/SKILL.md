@@ -38,10 +38,13 @@ Reduce the need to scan the inbox while keeping Caleb in control of responses an
 | --- | --- | --- |
 | UKG time-off requests that need Caleb's review | Important | Surface as an action item |
 | AWS Amazon Linux AMI alerts | Not relevant; team-handled | Omit from the briefing |
-| Sentry and AWS Lambda notices routed through `api-dev-us@lightcast.io` or an AWS owner address | Usually team-handled | Surface only for outages, security risks, or major service disruptions or potential disruptions; omit other notices from the briefing |
+| AWS Lambda notices routed through `api-dev-us@lightcast.io` or an AWS owner address | Usually team-handled | Surface only for outages, security risks, or major service disruptions or potential disruptions; omit other notices from the briefing |
+| AWS CodeBuild runtime or image default changes | Not mission-critical when they only risk blocking future builds | Omit unless the notice indicates an outage, security risk, or major service disruption or potential disruption |
+| Sentry notices | Relevant only for quota exhaustion | Surface when an error or other quota is running out or exhausted; omit individual error and QA issue alerts by default |
+| Harness budget threshold alerts | Useful for early visibility; low urgency | Include spend and percentage as a low-priority awareness item; do not label as a red alert |
 | IT and security tickets | Important | Use bullets of no more than 20 words each |
 
-When a new or unclear recurring category's relevance is uncertain, ask Caleb before deciding how to handle it. For group-delivered Sentry and AWS Lambda notices, surface only outages, security risks, or major service disruptions or potential disruptions. Caleb can ask to investigate other group notices as needed.
+When a new or unclear recurring category's relevance is uncertain, ask Caleb before deciding how to handle it. For group-delivered AWS Lambda notices, surface only outages, security risks, or major service disruptions or potential disruptions. The Sentry quota rule applies regardless of routing. Caleb can ask to investigate other notices as needed.
 
 ## Learning
 

@@ -1,0 +1,3 @@
+# Local improvement proposals may contain private context; keep them out of Git.
+inbox/requests/*.md
+!inbox/requests/.gitkeep

@@ -6,6 +6,7 @@ A version-controlled home for the instructions and workflows used in Caleb's thr
 
 - `AGENTS.md` — shared working instructions for agents operating in this repository.
 - `.agents/skills/email/SKILL.md` — the first reusable workflow, discoverable by Codex when this repository is open.
+- `.agents/skills/meeting-notes/SKILL.md` — a workflow for filing transcripts and meeting notes in Obsidian.
 - `inbox/README.md` — format for agent-proposed improvements to this hub.
 - `inbox/requests/` — local proposals awaiting review; request files are ignored by Git.
 

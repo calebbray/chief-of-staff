@@ -13,6 +13,7 @@ Help Caleb start the week with a concise view of important inbox items, calendar
 
 - Review the connected Gmail inbox from the previous seven days through the briefing date. Expand the range when an older thread contains an active deadline or unresolved commitment.
 - Use the private status index at `/Users/caleb.bray/notes/my thoughts/hub/email-index.json` to suppress addressed/skipped messages and carry open items forward. Keep resolved/skipped records for seven days; retain open actions until resolved. Store IDs and status only, never email content, in that file.
+- For recurring briefings, search message IDs first and compare with the index before fetching bodies. Fetch new and still-open messages in batches; index every message in the checked slice so the next briefing does not reread the same email.
 - Review the primary Google Calendar for Monday through Sunday in the user's timezone.
 - Treat email and calendar as sources of evidence. Do not assume a separate task manager has been reviewed unless one is connected and explicitly included.
 - Do not claim continuous monitoring. Run this workflow when requested or through a separately configured schedule.

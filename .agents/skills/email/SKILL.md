@@ -16,6 +16,8 @@ Reduce the need to scan the inbox while keeping Caleb in control of responses an
 3. Remove expired `addressed` and `skip` entries (seven days after their update). Keep `open` entries until resolved so an action does not disappear just because its email is older than the lookback.
 4. Review the requested inbox slice against **Known priority criteria** below. Prioritize messages that require a decision, a response, a deadline, or a promised follow-up. Judge relevance by topic and Caleb's role, not by unread status or subject wording alone. Use unread/new messages as a review signal, not as a measure of importance.
 5. Suppress messages whose Gmail message ID is indexed as `addressed` or `skip`. Surface indexed `open` items until they are resolved. A new message in the same thread has a different message ID and should be reviewed on its own.
+   - For a recurring check, search the lookback window for message IDs first, then compare those IDs with the index before fetching message bodies. Fetch only new IDs and indexed `open` items that need a status check; do not reread indexed `addressed` or `skip` messages.
+   - Batch reads for the remaining candidates. Keep the first pass limited to the current lookback and only widen it when an open action, active deadline, or relevant thread requires it.
 6. Return a concise briefing grouped as:
    - **Needs your attention** — sender, subject, why it matters, and any deadline.
    - **Reply likely needed** — why a response is needed and a suggested reply draft.
@@ -23,7 +25,7 @@ Reduce the need to scan the inbox while keeping Caleb in control of responses an
    - **No action apparent** — only if useful; summarize volume rather than listing every message.
 7. Keep each summary grounded in the message. Mark uncertainty and distinguish explicit deadlines or asks from inferred ones.
 8. Draft replies in Caleb's voice only when enough context is available. If key facts or a commitment are unclear, ask Caleb or leave a short placeholder instead of inventing them.
-9. Update the private index after review: add `open` for actions needing follow-up, `skip` for low-value/no-action mail, and `addressed` when Caleb confirms completion. Store only `message_id`, status, `updated_at`, and the seven-day `expires_at` for resolved/skipped entries. Do not store subjects, senders, snippets, or email bodies.
+9. Update the private index after review for every message in the checked slice: add `open` for actions needing follow-up, `skip` for reviewed messages that need no further attention, and `addressed` when Caleb confirms completion. This makes the next check incremental instead of repeating the same review. Store only `message_id`, status, `updated_at`, and the seven-day `expires_at` for resolved/skipped entries. Do not store subjects, senders, snippets, or email bodies.
 10. Mark resolved or no-action messages read only when Caleb has authorized that action and the connected Gmail tools support it. If read-state changes are unavailable, say so clearly; the status index still prevents repeat triage.
 11. Do not send, schedule, forward, archive, label, delete, or otherwise modify messages unless Caleb explicitly approves that specific action.
 12. If asked to send an approved draft, show the complete final text and recipient immediately before the send action when the interface allows review.
